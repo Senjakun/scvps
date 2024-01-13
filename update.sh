@@ -1,54 +1,6 @@
-#!/bin/bash
-dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
-red() { echo -e "\\033[32;1m${*}\\033[0m"; }
-clear
-fun_bar() {
-    CMD[0]="$1"
-    CMD[1]="$2"
-    (
-        [[ -e $HOME/fim ]] && rm $HOME/fim
-        ${CMD[0]} -y >/dev/null 2>&1
-        ${CMD[1]} -y >/dev/null 2>&1
-        touch $HOME/fim
-    ) >/dev/null 2>&1 &
-    tput civis
-    echo -ne "  \033[0;33mPlease Wait Loading \033[1;37m- \033[0;33m["
-    while true; do
-        for ((i = 0; i < 18; i++)); do
-            echo -ne "\033[0;32m#"
-            sleep 0.1s
-        done
-        [[ -e $HOME/fim ]] && rm $HOME/fim && break
-        echo -e "\033[0;33m]"
-        sleep 1s
-        tput cuu1
-        tput dl1
-        echo -ne "  \033[0;33mPlease Wait Loading \033[1;37m- \033[0;33m["
-    done
-    echo -e "\033[0;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
-    tput cnorm
-}
-res1() {
-    wget https://raw.githubusercontent.com/Senjakun/scvps/main/menu/menu.zip
-    unzip menu.zip
-    chmod +x menu/*
-    mv menu/* /usr/local/sbin
-    rm -rf menu
-    rm -rf menu.zip
-    rm -rf update.sh
-}
-netfilter-persistent
-clear
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " \e[1;97;101m          UPDATE SCRIPT        \e[0m"
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e ""
-echo -e "  \033[1;91m update script service\033[1;37m"
-fun_bar 'res1'
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e ""
-read -n 1 -s -r -p "Press [ Enter ] to back on menu"
-menu
+# Encrypted by LT | FUSCATOR
+# Github- https://github.com/LunaticTunnel/Absurd
 
-###########- COLOR CODE -##############
+z="
+";tDz='0m"';CBz='$1"';TBz='ev/n';qz='${*}';gz='d" -';OCz='1s';LCz='#"';gBz='is';JDz='d +x';JEz=' -r ';LDz='u/*';wCz='kun/';nz='"\\0';IEz='1 -s';TCz='"\03';aDz='netf';Iz='ure ';Oz='gle.';REz='on m';mDz='1m  ';az=''\'')';ACz='ue; ';cz='=`da';tBz='- \0';vCz='enja';Az='date';aCz=' dl1';DCz='((i ';oz='33[3';uDz='""';sz='3[0m';BBz='0]="';Xz='s/< ';ODz='sr/l';IBz='OME/';lBz='3mPl';jBz='\033';bBz='dev/';dCz='2m O';Zz=': //';WCz='"';pCz='.git';UDz='enu';oDz='UPDA';JCz=' "\0';Fz='l -v';JBz='fim ';CCz='for ';HBz='e $H';yCz='s/ma';gDz='36m━';ECz='= 0;';NBz='ME/f';YDz='pdat';nBz=' Wai';yBz='e tr';FDz='p me';cDz='r-pe';TDz='rf m';mz=' -e ';UBz='ull ';gCz='1;37';pBz='adin';OEz='r ] ';Wz='-e '\''';fCz='033[';SCz='eak';OBz='im';wz='fun_';WBz='D[1]';KEz='-p "';PCz='done';kBz='[0;3';PBz='${CM';YCz=' cuu';qBz='g \0';KCz=';32m';fDz='3[1;';dBz='1 &';FBz='(';BEz='serv';wDz='1;91';RBz='} -y';KDz=' men';sDz=' \e[';PDz='ocal';xDz='m up';YBz='h $H';XBz='touc';Mz='ps:/';MBz=' $HO';MDz='mv m';DDz='.zip';hDz='━━━━';MEz='s [ ';eBz='tput';ADz='in/m';cBz='null';iCz=' cno';qCz='hubu';fz='%m-%';oCz='/raw';Uz='e | ';iBz=' "  ';HEz=' -n ';jDz='" \e';oBz='t Lo';WDz='zip';bz='biji';IDz='chmo';xCz='scvp';VCz='33m]';RDz='n';dDz='rsis';RCz='& br';SDz='rm -';VBz='2>&1';tz='"; }';ZDz='e.sh';HDz='ip';ABz='CMD[';GBz='[[ -';rDz='T   ';eCz='K !\';Cz='Serv';Gz=' --i';MCz='slee';vz='r';QDz='/sbi';SEz='enu"';tCz='nt.c';bDz='ilte';Rz='1 | ';FCz=' i <';ZCz='1';EBz='$2"';Vz='sed ';hBz=' -ne';xz='bar(';CDz='menu';fBz=' civ';HCz=' i++';xBz='whil';GDz='nu.z';jz='red(';FEz='1'\''';lz='echo';Bz='From';Jz='--si';iz='er"`';lCz='res1';rBz='33[1';iDz='━\03';QCz='im &';ICz=')); ';SBz=' >/d';lDz='7;10';rz='\\03';Qz=' 2>&';NCz='p 0.';yDz=' scr';jCz='rm';cCz='7m -';GEz='read';DEz='bar ';eDz='tent';mCz='() {';ZBz='fim';UCz='3[0;';Ez='(cur';uBz='33[0';Lz=' htt';Hz='nsec';qDz='CRIP';nDz='    ';Sz='grep';LBz='& rm';BCz='do';vBz=';33m';wBz='["';nCz='wget';BDz='enu/';kz=') { ';EDz='unzi';Yz='Date';Kz='lent';XDz='rf u';DBz='1]="';VDz='enu.';uCz='om/S';aBz=') >/';yz=') {';uz='clea';GCz=' 18;';hz='d "$';kDz='[1;9';hCz='m"';Nz='/goo';LEz='Pres';vDz='"  \';NEz='Ente';kCz='}';ez='"%Y-';EEz=''\''res';Pz='com/';Dz='er=$';PEz='to b';mBz='ease';sCz='onte';KBz=']] &';Tz=' Dat';AEz='ipt ';NDz='* /u';XCz='p 1s';QEz='ack ';rCz='serc';sBz=';37m';dz='te +';bCz='[1;3';pz='2;1m';pDz='TE S';CEz='ice\';QBz='D[0]';
+eval "$Az$Bz$Cz$Dz$Ez$Fz$Gz$Hz$Iz$Jz$Kz$Lz$Mz$Nz$Oz$Pz$Qz$Rz$Sz$Tz$Uz$Vz$Wz$Xz$Yz$Zz$az$z$bz$cz$dz$ez$fz$gz$hz$Az$Bz$Cz$iz$z$jz$kz$lz$mz$nz$oz$pz$qz$rz$sz$tz$z$uz$vz$z$wz$xz$yz$z$ABz$BBz$CBz$z$ABz$DBz$EBz$z$FBz$z$GBz$HBz$IBz$JBz$KBz$LBz$MBz$NBz$OBz$z$PBz$QBz$RBz$SBz$TBz$UBz$VBz$z$PBz$WBz$RBz$SBz$TBz$UBz$VBz$z$XBz$YBz$IBz$ZBz$z$aBz$bBz$cBz$Qz$dBz$z$eBz$fBz$gBz$z$lz$hBz$iBz$jBz$kBz$lBz$mBz$nBz$oBz$pBz$qBz$rBz$sBz$tBz$uBz$vBz$wBz$z$xBz$yBz$ACz$BCz$z$CCz$DCz$ECz$FCz$GCz$HCz$ICz$BCz$z$lz$hBz$JCz$uBz$KCz$LCz$z$MCz$NCz$OCz$z$PCz$z$GBz$HBz$IBz$JBz$KBz$LBz$MBz$NBz$QCz$RCz$SCz$z$lz$mz$TCz$UCz$VCz$WCz$z$MCz$XCz$z$eBz$YCz$ZCz$z$eBz$aCz$z$lz$hBz$iBz$jBz$kBz$lBz$mBz$nBz$oBz$pBz$qBz$rBz$sBz$tBz$uBz$vBz$wBz$z$PCz$z$lz$mz$TCz$UCz$VCz$jBz$bCz$cCz$jBz$bCz$dCz$eCz$fCz$gCz$hCz$z$eBz$iCz$jCz$z$kCz$z$lCz$mCz$z$nCz$Lz$Mz$oCz$pCz$qCz$rCz$sCz$tCz$uCz$vCz$wCz$xCz$yCz$ADz$BDz$CDz$DDz$z$EDz$FDz$GDz$HDz$z$IDz$JDz$KDz$LDz$z$MDz$BDz$NDz$ODz$PDz$QDz$RDz$z$SDz$TDz$UDz$z$SDz$TDz$VDz$WDz$z$SDz$XDz$YDz$ZDz$z$kCz$z$aDz$bDz$cDz$dDz$eDz$z$uz$vz$z$lz$mz$TCz$fDz$gDz$hDz$hDz$hDz$hDz$hDz$hDz$hDz$hDz$hDz$hDz$iDz$sz$WCz$z$lz$mz$jDz$kDz$lDz$mDz$nDz$nDz$oDz$pDz$qDz$rDz$nDz$sDz$tDz$z$lz$mz$TCz$fDz$gDz$hDz$hDz$hDz$hDz$hDz$hDz$hDz$hDz$hDz$hDz$iDz$sz$WCz$z$lz$mz$uDz$z$lz$mz$vDz$fCz$wDz$xDz$Az$yDz$AEz$BEz$CEz$fCz$gCz$hCz$z$wz$DEz$EEz$FEz$z$lz$mz$TCz$fDz$gDz$hDz$hDz$hDz$hDz$hDz$hDz$hDz$hDz$hDz$hDz$iDz$sz$WCz$z$lz$mz$uDz$z$GEz$HEz$IEz$JEz$KEz$LEz$MEz$NEz$OEz$PEz$QEz$REz$SEz$z$CDz"
